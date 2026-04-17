@@ -716,11 +716,17 @@
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
     .hero-right { display: none; }
-    .pillars-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr !important; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
     .proof-grid { grid-template-columns: 1fr; }
     .contact { grid-template-columns: 1fr; }
     .lang-trio { flex-direction: column; }
+    .process-grid { grid-template-columns: 1fr 1fr !important; gap: 2.5rem !important; }
+    .process-connector { display: none !important; }
+  }
+  @media (max-width: 540px) {
+    .process-grid { grid-template-columns: 1fr !important; }
+    .products-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -820,9 +826,9 @@
   <div class="section-label" data-i18n="how_label">Nuestro proceso</div>
   <h2 class="section-title" data-i18n="how_title">Así trabajamos <em>con usted</em></h2>
 
-  <div style="display:grid; grid-template-columns: repeat(4,1fr); gap: 0; max-width:1100px; margin:0 auto; position:relative;">
+  <div class="process-grid" style="display:grid; grid-template-columns: repeat(4,1fr); gap: 0; max-width:1100px; margin:0 auto; position:relative;">
     <!-- connector line -->
-    <div style="position:absolute; top:2.8rem; left:12.5%; right:12.5%; height:2px; background: linear-gradient(90deg, var(--gold), var(--sky)); opacity:0.3; pointer-events:none;"></div>
+    <div class="process-connector" style="position:absolute; top:2.8rem; left:12.5%; right:12.5%; height:2px; background: linear-gradient(90deg, var(--gold), var(--sky)); opacity:0.3; pointer-events:none;"></div>
 
     <div class="fade-up" style="text-align:center; padding: 0 1.5rem;">
       <div style="width:56px; height:56px; border-radius:50%; background:rgba(232,160,32,0.15); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; font-size:1.4rem; position:relative; z-index:1;">🗣️</div>
