@@ -1,15 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fairchild Heavy Industries LLC</title>
+<title>Fairchild Heavy Industries LLC — Software, AI, and Technical Consulting</title>
+<meta name="description" content="Fairchild Heavy Industries LLC — software development, websites, mobile apps, AI-powered solutions, digital marketing, and technical consulting. Based in Carolina, Puerto Rico. Serving clients worldwide.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --black: #0a0a0a;
+    --black-2: #111111;
     --white: #f4f1eb;
     --cream: #e8e4dc;
     --rust: #c4401a;
@@ -17,6 +20,7 @@
     --steel: #4a5568;
     --steel-light: #718096;
     --rule: 1px solid rgba(244,241,235,0.15);
+    --rule-soft: 1px solid rgba(244,241,235,0.08);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,7 +36,6 @@
     overflow-x: hidden;
   }
 
-  /* grid texture overlay */
   body::before {
     content: '';
     position: fixed;
@@ -45,8 +48,10 @@
     z-index: 0;
   }
 
+  a { color: inherit; }
+
   .container {
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
@@ -56,7 +61,7 @@
   /* HEADER */
   header {
     border-bottom: var(--rule);
-    padding: 1.5rem 0;
+    padding: 1.1rem 0;
     position: sticky;
     top: 0;
     background: rgba(10,10,10,0.95);
@@ -68,17 +73,42 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
   }
 
   .logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.12em;
-    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
     text-decoration: none;
+    color: var(--white);
   }
 
-  .logo span { color: var(--rust); }
+  .logo img {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border: 1px solid rgba(244,241,235,0.2);
+  }
+
+  .logo-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.14em;
+    line-height: 1;
+  }
+
+  .logo-mark span { color: var(--rust); }
+
+  .logo-sub {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--steel-light);
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
 
   nav a {
     font-family: 'IBM Plex Mono', monospace;
@@ -95,7 +125,7 @@
 
   /* HERO */
   .hero {
-    padding: 8rem 0 6rem;
+    padding: 7rem 0 6rem;
     border-bottom: var(--rule);
     position: relative;
   }
@@ -122,11 +152,11 @@
 
   .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
     line-height: 0.92;
     letter-spacing: 0.04em;
-    margin-bottom: 3rem;
-    max-width: 800px;
+    margin-bottom: 2.5rem;
+    max-width: 980px;
   }
 
   .hero h1 em {
@@ -135,9 +165,9 @@
   }
 
   .hero-body {
-    max-width: 560px;
+    max-width: 620px;
     font-size: 1.05rem;
-    color: rgba(244,241,235,0.75);
+    color: rgba(244,241,235,0.78);
     line-height: 1.8;
     margin-bottom: 3rem;
   }
@@ -195,20 +225,17 @@
   }
 
   /* ABOUT */
-  .about {
-    border-bottom: var(--rule);
-    padding-bottom: 5rem;
-  }
+  .about { border-bottom: var(--rule); padding-bottom: 5rem; }
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     gap: 5rem;
     align-items: start;
   }
 
   .about-main p {
-    color: rgba(244,241,235,0.8);
+    color: rgba(244,241,235,0.82);
     margin-bottom: 1.25rem;
     font-size: 1rem;
   }
@@ -221,12 +248,10 @@
   .about-sidebar {
     border-left: 1px solid rgba(196,64,26,0.4);
     padding-left: 2rem;
-    margin-top: 1rem;
+    margin-top: 0.4rem;
   }
 
-  .sidebar-item {
-    margin-bottom: 2rem;
-  }
+  .sidebar-item { margin-bottom: 2rem; }
 
   .sidebar-label {
     font-family: 'IBM Plex Mono', monospace;
@@ -239,18 +264,15 @@
 
   .sidebar-value {
     font-size: 0.95rem;
-    color: rgba(244,241,235,0.75);
+    color: rgba(244,241,235,0.78);
   }
 
   /* SERVICES */
-  .services {
-    border-bottom: var(--rule);
-    padding-bottom: 5rem;
-  }
+  .services { border-bottom: var(--rule); padding-bottom: 5rem; }
 
   .services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: rgba(244,241,235,0.08);
     border: 1px solid rgba(244,241,235,0.08);
@@ -258,13 +280,11 @@
 
   .service-card {
     background: var(--black);
-    padding: 2.5rem;
+    padding: 2.25rem 2rem;
     transition: background 0.2s;
   }
 
-  .service-card:hover {
-    background: rgba(196,64,26,0.06);
-  }
+  .service-card:hover { background: rgba(196,64,26,0.06); }
 
   .service-num {
     font-family: 'IBM Plex Mono', monospace;
@@ -276,23 +296,82 @@
 
   .service-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     letter-spacing: 0.06em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     line-height: 1.1;
   }
 
   .service-desc {
     font-size: 0.9rem;
-    color: rgba(244,241,235,0.65);
+    color: rgba(244,241,235,0.68);
     line-height: 1.7;
   }
 
-  /* CREDENTIALS */
-  .credentials {
-    border-bottom: var(--rule);
-    padding-bottom: 5rem;
+  /* WORK / PROJECTS */
+  .work { border-bottom: var(--rule); padding-bottom: 5rem; }
+
+  .project {
+    display: grid;
+    grid-template-columns: 140px 1.5fr 1fr;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(244,241,235,0.1);
+    align-items: start;
   }
+
+  .project:last-child { border-bottom: 1px solid rgba(244,241,235,0.1); }
+
+  .project-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-top: 0.35rem;
+  }
+
+  .project-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+    line-height: 1.1;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+    color: rgba(244,241,235,0.78);
+    line-height: 1.7;
+  }
+
+  .project-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--steel-light);
+    line-height: 1.9;
+  }
+
+  .project-meta a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,64,26,0.5);
+    transition: color 0.2s, border-color 0.2s;
+    word-break: break-all;
+  }
+
+  .project-meta a:hover { color: var(--rust); border-color: var(--rust); }
+
+  .project-meta-row { display: block; }
+
+  .project-meta-label {
+    color: var(--rust);
+    margin-right: 0.5rem;
+  }
+
+  /* CREDENTIALS */
+  .credentials { border-bottom: var(--rule); padding-bottom: 5rem; }
 
   .cred-list {
     display: grid;
@@ -327,9 +406,7 @@
   }
 
   /* CONTACT */
-  .contact {
-    padding-bottom: 6rem;
-  }
+  .contact { padding-bottom: 6rem; }
 
   .contact-inner {
     display: flex;
@@ -339,14 +416,18 @@
     flex-wrap: wrap;
   }
 
-  .contact-text {
-    max-width: 480px;
-  }
+  .contact-text { max-width: 520px; }
 
   .contact-text p {
-    color: rgba(244,241,235,0.7);
+    color: rgba(244,241,235,0.75);
     font-size: 1rem;
     margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   .contact-link {
@@ -354,13 +435,18 @@
     align-items: center;
     gap: 0.75rem;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--white);
     text-decoration: none;
     border: 1px solid rgba(244,241,235,0.25);
-    padding: 0.85rem 1.5rem;
+    padding: 0.8rem 1.3rem;
     letter-spacing: 0.08em;
     transition: all 0.2s;
+  }
+
+  .contact-link.primary {
+    background: var(--rust);
+    border-color: var(--rust);
   }
 
   .contact-link:hover {
@@ -368,12 +454,17 @@
     border-color: var(--rust);
   }
 
+  .contact-link.primary:hover {
+    background: var(--rust-dark);
+    border-color: var(--rust-dark);
+  }
+
   .contact-address {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
     color: var(--steel-light);
     letter-spacing: 0.08em;
-    line-height: 1.8;
+    line-height: 1.9;
     text-align: right;
   }
 
@@ -381,6 +472,9 @@
   footer {
     border-top: var(--rule);
     padding: 1.5rem 0;
+  }
+
+  .footer-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -407,13 +501,23 @@
   .hero-meta { animation: fadeUp 0.6s 0.3s ease both; }
 
   /* RESPONSIVE */
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .project { grid-template-columns: 1fr; gap: 1rem; }
+    .project-tag { padding-top: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 1.25rem; }
+    .hero { padding: 4.5rem 0 4rem; }
     .services-grid { grid-template-columns: 1fr; }
-    .cred-list { grid-template-columns: 1fr 1fr; }
+    .cred-list { grid-template-columns: 1fr; }
     .contact-inner { flex-direction: column; align-items: flex-start; }
     .contact-address { text-align: left; }
     nav { display: none; }
+    .logo-sub { display: none; }
+    .hero-meta { gap: 1.5rem 2rem; }
   }
 </style>
 </head>
@@ -422,11 +526,18 @@
 <header>
   <div class="container">
     <div class="header-inner">
-      <a href="#" class="logo">Fairchild<span>.</span>Heavy<span>.</span>Industries</a>
+      <a href="#" class="logo">
+        <img src="logo.jpg" alt="Fairchild Heavy Industries logo">
+        <div>
+          <div class="logo-mark">Fairchild<span>.</span>Heavy<span>.</span>Industries</div>
+          <span class="logo-sub">EST. 2026 — Carolina, P.R.</span>
+        </div>
+      </a>
       <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#credentials">Background</a>
+        <a href="#work">Work</a>
+        <a href="#background">Background</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -436,28 +547,28 @@
 <main>
   <section class="hero">
     <div class="container">
-      <div class="hero-tag">Independent Technical Consulting — Carolina, Puerto Rico</div>
-      <h1>Built to <em>Ship.</em> Not to Slide.</h1>
+      <div class="hero-tag">Agentic AI · Systems Consulting</div>
+      <h1>Heavy Problems. <em>Quiet</em> Solutions.</h1>
       <p class="hero-body">
-        I help airlines and travel technology companies architect and implement Offer/Order retailing modernization — bridging legacy PSS environments with modern IATA ONE Order and NDC standards. The gap between a whiteboard architecture and something that actually works in production is where most implementations struggle. That gap is what I work in.
+        I have been building world-class reservations systems for 24 years — Full Service Airline Legacy and OOSD at Sabre, LCC systems with Radixx and Results, and Air + Cruise integrated systems at Amadeus. We can hit the ground running on Offer/Order, NDC, PSS modernization, and the messy edges of distribution. The same patterns translate directly to hotels, cruises, concert ticketing, amusement parks, and anywhere else inventory meets demand at scale.
+      </p>
+      <p class="hero-body">
+        Beyond reservations, we build software, websites, and mobile apps, run digital marketing and lead generation, and take on technical problems across industries. Agentic AI is woven through all of it — not as a buzzword, but as a tool that makes the work faster and the output better.
       </p>
       <div class="hero-meta">
         <div class="hero-meta-item">
-          <strong>24</strong>
-          Years in Airline Tech
+          <strong>34</strong>
+          Years in Tech
         </div>
         <div class="hero-meta-item">
-          <strong>NDC / O&O</strong>
-          Core Specialty
+          <strong>Agentic AI</strong>
+          Rapid Development and Deployment
         </div>
         <div class="hero-meta-item">
-          <strong>PSS</strong>
-          Legacy to Modern
+          <strong>Multi-Industry</strong>
+          Reach
         </div>
-        <div class="hero-meta-item">
-          <strong>PR</strong>
-          Based / Remote
-        </div>
+       
       </div>
     </div>
   </section>
@@ -471,27 +582,23 @@
       </div>
       <div class="about-grid">
         <div class="about-main">
-          <p>I've spent 24 years inside the systems that run the airline industry — the 40-year-old legacy platforms nobody wants to talk about, and the modern Offer/Order infrastructure everyone's racing to build.</p>
-          <p>At <strong>Radixx (Sabre)</strong>, I led the design and delivery of Offer/Order capabilities on top of a live PSS — interline seat sales, dynamic ancillary pricing, codesharing — while keeping legacy ticketing and DCS requirements intact. Before that, at <strong>Amadeus</strong>, I built airline reservation solutions and worked directly with carriers to solve hard integration problems.</p>
-          <p>I'm not here to sell you on OOSD as a traveler revolution. Airlines need to modernize their retailing infrastructure for operational and commercial reasons, and the technical lift is significant. I'm here to help you ship it.</p>
-          <p>I started coding before I started managing, and I never really stopped caring about the craft of building software. Today I'm back to hands-on technical work — architecting solutions, writing code, and helping teams deliver things that actually work.</p>
+          <p><strong>Fairchild Heavy Industries LLC</strong> is a technology consulting and software development firm based in Carolina, Puerto Rico. Founded in April 2026 by Alexander Fairchild, the firm builds software, designs websites, develops cross-platform mobile apps, runs digital marketing and lead generation, and advises on technical strategy across industries.</p>
+          <p>The name is intentionally weighty. We treat what we build as industrial work — engineered, durable, and accountable to the people who depend on it. That applies whether the deliverable is a mobile game, a small-business website, an airline distribution system, or a marketing pipeline.</p>
+          <p>We are AI-native by default. Agentic AI is part of how we research, design, code, test, and ship — and increasingly, part of what we ship. That makes a small firm move like a much larger one, and lets us take on work across sectors without diluting quality.</p>
+          <p>The founder, <strong>Alexander Fairchild</strong>, has 34 years in technology, including senior roles at Sabre and Amadeus leading global engineering and product teams. Today the work spans heavy equipment distribution, consumer apps, and airline technology — wherever good software and clear thinking move the needle.</p>
         </div>
         <div class="about-sidebar">
           <div class="sidebar-item">
             <div class="sidebar-label">Entity</div>
-            <div class="sidebar-value">Fairchild Heavy Industries LLC<br>Carolina, Puerto Rico</div>
+            <div class="sidebar-value">Fairchild Heavy Industries LLC<br>Single-member · Founded April 2026<br>Carolina, Puerto Rico</div>
+          </div>
+          <div class="sidebar-item">
+            <div class="sidebar-label">Practice Areas</div>
+            <div class="sidebar-value">Software development · Web · Mobile · Agentic AI · Digital marketing · Airline & travel tech</div>
           </div>
           <div class="sidebar-item">
             <div class="sidebar-label">Engagement Types</div>
-            <div class="sidebar-value">Advisory retainer · Architecture review · Implementation support · Team augmentation</div>
-          </div>
-          <div class="sidebar-item">
-            <div class="sidebar-label">Domain Expertise</div>
-            <div class="sidebar-value">IATA NDC · ONE Order · PSS modernization · Interline & Codeshare · Offer/Order architecture</div>
-          </div>
-          <div class="sidebar-item">
-            <div class="sidebar-label">Technical Skills</div>
-            <div class="sidebar-value">Kotlin · C# / .NET · API integration · Solution architecture · Agile delivery</div>
+            <div class="sidebar-value">Project build · Retainer · Advisory · Team augmentation</div>
           </div>
           <div class="sidebar-item">
             <div class="sidebar-label">Languages</div>
@@ -512,75 +619,136 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-num">01</div>
-          <div class="service-name">Offer / Order Architecture</div>
-          <p class="service-desc">Design and definition of O/O retailing capabilities on top of existing PSS infrastructure. From initial architecture through production delivery — including the legacy constraints your other consultants won't acknowledge.</p>
+          <div class="service-name">Software Development</div>
+          <p class="service-desc">Custom software, APIs, and backend systems. We architect, write, and ship production code — Kotlin, C# / .NET, and the languages your problem demands.</p>
         </div>
         <div class="service-card">
           <div class="service-num">02</div>
-          <div class="service-name">NDC Implementation</div>
-          <p class="service-desc">Hands-on technical advisory for airlines implementing IATA NDC distribution. API design, schema review, GDS integration strategy, and the interoperability edge cases that derail most projects.</p>
+          <div class="service-name">Mobile Apps</div>
+          <p class="service-desc">Cross-platform Android and iOS applications, built with Kotlin Multiplatform. One codebase, native performance, and full deployment to the App Store and Google Play.</p>
         </div>
         <div class="service-card">
           <div class="service-num">03</div>
-          <div class="service-name">PSS Modernization</div>
-          <p class="service-desc">Bridging legacy passenger service systems with modern retailing platforms. Interline agreements, codesharing, DCS requirements, EMD handling — the full operational picture, not just the greenfield vision.</p>
+          <div class="service-name">Websites</div>
+          <p class="service-desc">Design and development of fast, durable websites — from a one-page brand site to a content-driven small business presence. Built to load fast and last.</p>
         </div>
         <div class="service-card">
           <div class="service-num">04</div>
-          <div class="service-name">Technical Due Diligence</div>
-          <p class="service-desc">Independent assessment of airline technology investments, vendor proposals, and modernization roadmaps. For system integrators, investors, and airlines evaluating platform transitions.</p>
+          <div class="service-name">Agentic AI Solutions</div>
+          <p class="service-desc">Custom AI agents and automations that do real work — content pipelines, research, metadata enrichment, internal tooling. Built on Claude and shipped with intent.</p>
         </div>
         <div class="service-card">
           <div class="service-num">05</div>
-          <div class="service-name">Domain SME Augmentation</div>
-          <p class="service-desc">Embedded advisory support for system integrator teams and travel tech startups who need deep airline retailing expertise on-demand — without a full-time hire.</p>
+          <div class="service-name">Marketing & Lead Gen</div>
+          <p class="service-desc">Digital marketing strategy and execution across YouTube, Instagram, Facebook, and WhatsApp Business — integrated with the website and CRM so leads actually go somewhere.</p>
         </div>
         <div class="service-card">
           <div class="service-num">06</div>
-          <div class="service-name">Software Development</div>
-          <p class="service-desc">Hands-on development for airline and travel technology projects. Kotlin, C# / .NET, API integration, and cross-platform applications. Domain knowledge baked into the code, not bolted on after.</p>
+          <div class="service-name">Airline & Travel Tech</div>
+          <p class="service-desc">Specialist consulting for airlines and travel technology firms: Offer/Order architecture, NDC implementation, PSS modernization, interline and codeshare logic.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="credentials" id="credentials">
+  <section class="work" id="work">
     <div class="container">
       <div class="section-header">
         <span class="section-number">03 —</span>
+        <h2 class="section-title">Selected Work</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="project">
+        <div class="project-tag">Web · Marketing</div>
+        <div>
+          <h3 class="project-title">Sweep &amp; Vac — Website &amp; Lead Generation</h3>
+          <p class="project-desc">Full website rebuild and end-to-end lead generation strategy for Sweeping and Vacuum Unlimited Inc., a Puerto Rico-based heavy equipment importer, distributor, and service shop with thirty years in business. Spans website, YouTube, Instagram, Facebook, and WhatsApp Business — a single integrated funnel.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-meta-row"><span class="project-meta-label">Client</span> Sweeping &amp; Vacuum Unlimited, Inc.</span>
+          <span class="project-meta-row"><span class="project-meta-label">Sector</span> Heavy Equipment</span>
+          <span class="project-meta-row"><span class="project-meta-label">Live</span> <a href="https://sweepandvac.com" target="_blank" rel="noopener">sweepandvac.com</a></span>
+          <span class="project-meta-row"><span class="project-meta-label">Status</span> Site live · marketing ongoing</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-tag">Agentic AI</div>
+        <div>
+          <h3 class="project-title">YouTube Metadata Agent</h3>
+          <p class="project-desc">A Claude Code-powered agent that analyzes, optimizes, and updates the metadata on existing YouTube videos at scale. Built to support the Sweep &amp; Vac lead generation effort, released as a public tool for anyone to use.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-meta-row"><span class="project-meta-label">Type</span> Open Source</span>
+          <span class="project-meta-row"><span class="project-meta-label">Repo</span> <a href="https://github.com/FairchildHeavyIndustries/youtube-metadata-agent" target="_blank" rel="noopener">github.com/FairchildHeavyIndustries/youtube-metadata-agent</a></span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-tag">Mobile · KMP</div>
+        <div>
+          <h3 class="project-title">Freecell — Kotlin Multiplatform Card Game</h3>
+          <p class="project-desc">A polished cross-platform Freecell solitaire game built with Kotlin Multiplatform, currently being deployed to the App Store and Google Play. The core engine has been extracted and open-sourced for other developers to build on.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-meta-row"><span class="project-meta-label">Platforms</span> iOS · Android</span>
+          <span class="project-meta-row"><span class="project-meta-label">Status</span> Store deployment</span>
+          <span class="project-meta-row"><span class="project-meta-label">Engine</span> <a href="https://github.com/FairchildHeavyIndustries/freecell-engine-kt" target="_blank" rel="noopener">github.com/FairchildHeavyIndustries/freecell-engine-kt</a></span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-tag">Consulting</div>
+        <div>
+          <h3 class="project-title">Airline &amp; Travel Technology Advisory</h3>
+          <p class="project-desc">Ongoing advisory for airline and travel technology clients: Offer/Order retailing architecture on top of live PSS environments, IATA NDC implementation, interline and codeshare logic, and PSS modernization roadmaps. 34 years of operator-side experience inside Sabre, Amadeus, and Spirit.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-meta-row"><span class="project-meta-label">Sector</span> Airline / Travel Tech</span>
+          <span class="project-meta-row"><span class="project-meta-label">Reach</span> Worldwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="credentials" id="background">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04 —</span>
         <h2 class="section-title">Background</h2>
         <div class="section-rule"></div>
       </div>
       <div class="cred-list">
         <div class="cred-item">
-          <div class="cred-org">Sabre / Radixx</div>
+          <div class="cred-org">Fairchild Heavy Industries LLC</div>
+          <div class="cred-role">Founder · Principal</div>
+          <div class="cred-detail">2026 – Present · Carolina, PR</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-org">Sabre Corporation</div>
           <div class="cred-role">Director of Product Management</div>
-          <div class="cred-detail">2019 – 2026 · Orlando, FL</div>
+          <div class="cred-detail">2019 – 2026 · USA / Poland / India</div>
         </div>
         <div class="cred-item">
           <div class="cred-org">Amadeus IT Group</div>
           <div class="cred-role">Developer Team Lead</div>
-          <div class="cred-detail">2016 – 2019 · Miami, FL</div>
+          <div class="cred-detail">2016 – 2019</div>
         </div>
         <div class="cred-item">
           <div class="cred-org">Results Reservation Technologies</div>
-          <div class="cred-role">Product, Delivery & Development</div>
-          <div class="cred-detail">2008 – 2015 · Weston, FL</div>
+          <div class="cred-role">Product, Delivery &amp; Development</div>
+          <div class="cred-detail">2008 – 2015</div>
         </div>
         <div class="cred-item">
           <div class="cred-org">Spirit Airlines</div>
           <div class="cred-role">SQA Manager</div>
-          <div class="cred-detail">2002 – 2008 · Plantation, FL</div>
+          <div class="cred-detail">2002 – 2008</div>
         </div>
         <div class="cred-item">
-          <div class="cred-org">Grupo IAMSA</div>
-          <div class="cred-role">PSS Delivery & Support</div>
-          <div class="cred-detail">2012 – 2013</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-org">Fairchild Heavy Industries LLC</div>
-          <div class="cred-role">Independent Consultant</div>
-          <div class="cred-detail">2026 – Present · Carolina, PR</div>
+          <div class="cred-org">SEGA · mFactory · Netcentives</div>
+          <div class="cred-role">Early Career — QA &amp; Engineering</div>
+          <div class="cred-detail">Pre-2002</div>
         </div>
       </div>
     </div>
@@ -589,24 +757,27 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header">
-        <span class="section-number">04 —</span>
+        <span class="section-number">05 —</span>
         <h2 class="section-title">Contact</h2>
         <div class="section-rule"></div>
       </div>
       <div class="contact-inner">
         <div class="contact-text">
-          <p>If you're an airline evaluating an Offer/Order transition, a travel tech startup building on NDC, or a system integrator who needs someone who has genuinely done this at scale — I'm happy to talk.</p>
-          <a href="mailto:alex.fairchild@gmail.com" class="contact-link">
-            alex.fairchild@gmail.com →
-          </a>
+          <p>If you need software built, a website rebuilt, a mobile app shipped, an AI agent set loose on a real problem, or a marketing engine that produces leads — we'd be glad to talk. Airline and travel-tech inquiries equally welcome.</p>
+          <div class="contact-links">
+            <a href="mailto:fairchildheavyindustries@gmail.com" class="contact-link primary">
+              fairchildheavyindustries@gmail.com →
+            </a>
+            <a href="tel:+13057720456" class="contact-link">
+              +1 (305) 772-0456
+            </a>
+          </div>
         </div>
         <div class="contact-address">
           Fairchild Heavy Industries LLC<br>
           1314 Calle Mallorca<br>
           Carolina, Puerto Rico 00983<br>
-          United States<br>
-          <br>
-          +1 (305) 772-0456
+          United States
         </div>
       </div>
     </div>
@@ -614,9 +785,11 @@
 </main>
 
 <footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;width:100%">
-    <span class="footer-copy">© 2026 Fairchild Heavy Industries LLC — Carolina, Puerto Rico</span>
-    <span class="footer-copy">Consulting &amp; Technology Services</span>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Fairchild Heavy Industries LLC — Carolina, Puerto Rico</span>
+      <span class="footer-copy">Software · AI · Consulting</span>
+    </div>
   </div>
 </footer>
 
