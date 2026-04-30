@@ -8,19 +8,20 @@
 <link rel="icon" type="image/jpeg" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #0a0a0a;
-    --black-2: #111111;
-    --white: #f4f1eb;
-    --cream: #e8e4dc;
-    --rust: #c4401a;
-    --rust-dark: #8a2c10;
-    --steel: #4a5568;
-    --steel-light: #718096;
-    --rule: 1px solid rgba(244,241,235,0.15);
-    --rule-soft: 1px solid rgba(244,241,235,0.08);
+    --cream: #fbf9f1;
+    --cream-2: #f3efe1;
+    --navy: #1a2b3d;
+    --navy-2: #243a52;
+    --olive: #6b6f3a;
+    --olive-dark: #555830;
+    --ink: #1a2b3d;
+    --ink-soft: rgba(26,43,61,0.72);
+    --ink-mute: rgba(26,43,61,0.55);
+    --rule: 1px solid rgba(26,43,61,0.18);
+    --rule-soft: 1px solid rgba(26,43,61,0.1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,8 +29,8 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--black);
-    color: var(--white);
+    background: var(--cream);
+    color: var(--ink);
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
     line-height: 1.7;
@@ -41,8 +42,8 @@
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(244,241,235,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(244,241,235,0.02) 1px, transparent 1px);
+      linear-gradient(rgba(26,43,61,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,43,61,0.04) 1px, transparent 1px);
     background-size: 48px 48px;
     pointer-events: none;
     z-index: 0;
@@ -64,7 +65,7 @@
     padding: 1.1rem 0;
     position: sticky;
     top: 0;
-    background: rgba(10,10,10,0.95);
+    background: rgba(251,249,241,0.95);
     backdrop-filter: blur(8px);
     z-index: 100;
   }
@@ -81,14 +82,15 @@
     align-items: center;
     gap: 0.85rem;
     text-decoration: none;
-    color: var(--white);
+    color: var(--ink);
   }
 
   .logo img {
-    width: 38px;
-    height: 38px;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
-    border: 1px solid rgba(244,241,235,0.2);
+    border-radius: 50%;
+    border: 1px solid rgba(26,43,61,0.18);
   }
 
   .logo-mark {
@@ -98,14 +100,14 @@
     line-height: 1;
   }
 
-  .logo-mark span { color: var(--rust); }
+  .logo-mark span { color: var(--olive); }
 
   .logo-sub {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.6rem;
     letter-spacing: 0.18em;
-    color: var(--steel-light);
+    color: var(--ink-mute);
     text-transform: uppercase;
     margin-top: 0.25rem;
   }
@@ -115,19 +117,30 @@
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--steel-light);
+    color: var(--ink-mute);
     text-decoration: none;
     margin-left: 2rem;
     transition: color 0.2s;
   }
 
-  nav a:hover { color: var(--white); }
+  nav a:hover { color: var(--ink); }
 
   /* HERO */
   .hero {
-    padding: 7rem 0 6rem;
+    padding: 6rem 0 5rem;
     border-bottom: var(--rule);
     position: relative;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(380px, 1fr);
+    gap: 4.5rem;
+    align-items: start;
+  }
+
+  .hero-mark {
+    display: none;
   }
 
   .hero-tag {
@@ -135,7 +148,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--olive);
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
@@ -147,30 +160,33 @@
     display: inline-block;
     width: 2rem;
     height: 1px;
-    background: var(--rust);
+    background: var(--olive);
   }
 
   .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3.5rem, 9vw, 7.5rem);
-    line-height: 0.92;
-    letter-spacing: 0.04em;
-    margin-bottom: 2.5rem;
-    max-width: 980px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.25rem;
+    max-width: 720px;
   }
 
   .hero h1 em {
     font-style: normal;
-    color: var(--rust);
+    color: var(--olive);
   }
 
   .hero-body {
     max-width: 620px;
-    font-size: 1.05rem;
-    color: rgba(244,241,235,0.78);
-    line-height: 1.8;
-    margin-bottom: 3rem;
+    font-size: 1rem;
+    color: rgba(26,43,61,0.78);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
   }
+
+  .hero-meta { margin-top: 2.5rem; }
 
   .hero-meta {
     display: flex;
@@ -182,18 +198,229 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
-    color: var(--steel-light);
+    color: var(--ink-mute);
     text-transform: uppercase;
   }
 
   .hero-meta-item strong {
     display: block;
-    color: var(--white);
+    color: var(--ink);
     font-size: 1.4rem;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0.08em;
     font-weight: 400;
     margin-bottom: 0.1rem;
+  }
+
+  /* CTA / CONTACT FORM */
+  .cta {
+    background: var(--cream-2);
+    border: 1px solid rgba(26,43,61,0.14);
+    padding: 2rem 1.85rem 1.85rem;
+    position: relative;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 38px;
+    height: 4px;
+    background: var(--olive);
+  }
+
+  .cta-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.85rem;
+    letter-spacing: 0.05em;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .cta-sub {
+    font-size: 0.9rem;
+    color: rgba(26,43,61,0.7);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .field {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .field[hidden] { display: none !important; }
+
+  .field label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 0.35rem;
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid rgba(26,43,61,0.18);
+    border-radius: 0;
+    padding: 0.7rem 0.8rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .field textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.55;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--olive);
+    background: #fff;
+  }
+
+  .field input:invalid:not(:placeholder-shown),
+  .field input.invalid {
+    border-color: #b04a2a;
+  }
+
+  .field-error {
+    display: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: #b04a2a;
+    margin-top: 0.3rem;
+  }
+
+  .field.has-error .field-error { display: block; }
+  .field.has-error input { border-color: #b04a2a; }
+
+  .radio-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .radio-opt {
+    flex: 1;
+    position: relative;
+  }
+
+  .radio-opt input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio-opt label {
+    display: block;
+    text-align: center;
+    padding: 0.65rem 0.5rem;
+    border: 1px solid rgba(26,43,61,0.18);
+    background: var(--cream);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 0;
+  }
+
+  .radio-opt input:checked + label {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--cream);
+  }
+
+  .radio-opt input:focus-visible + label {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  .cta-submit {
+    width: 100%;
+    background: var(--olive);
+    color: #fff;
+    border: none;
+    padding: 0.95rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 0.25rem;
+  }
+
+  .cta-submit:hover { background: var(--olive-dark); }
+
+  .cta-privacy {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(26,43,61,0.1);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(26,43,61,0.62);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .cta-privacy strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .cta-privacy::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: 0.45rem;
+    background: var(--olive);
+    border-radius: 50%;
+  }
+
+  .cta-success {
+    display: none;
+    padding: 1.25rem;
+    background: rgba(107,111,58,0.1);
+    border: 1px solid rgba(107,111,58,0.4);
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .cta-success strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+    color: var(--olive-dark);
   }
 
   /* SECTION HEADERS */
@@ -208,7 +435,7 @@
   .section-number {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
-    color: var(--rust);
+    color: var(--olive);
     letter-spacing: 0.15em;
   }
 
@@ -221,7 +448,7 @@
   .section-rule {
     flex: 1;
     height: 1px;
-    background: rgba(244,241,235,0.1);
+    background: rgba(26,43,61,0.15);
   }
 
   /* ABOUT */
@@ -235,18 +462,18 @@
   }
 
   .about-main p {
-    color: rgba(244,241,235,0.82);
+    color: rgba(26,43,61,0.82);
     margin-bottom: 1.25rem;
     font-size: 1rem;
   }
 
   .about-main p strong {
-    color: var(--white);
+    color: var(--ink);
     font-weight: 500;
   }
 
   .about-sidebar {
-    border-left: 1px solid rgba(196,64,26,0.4);
+    border-left: 1px solid rgba(107,111,58,0.5);
     padding-left: 2rem;
     margin-top: 0.4rem;
   }
@@ -258,13 +485,13 @@
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--olive);
     margin-bottom: 0.4rem;
   }
 
   .sidebar-value {
     font-size: 0.95rem;
-    color: rgba(244,241,235,0.78);
+    color: rgba(26,43,61,0.78);
   }
 
   /* SERVICES */
@@ -274,22 +501,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: rgba(244,241,235,0.08);
-    border: 1px solid rgba(244,241,235,0.08);
+    background: rgba(26,43,61,0.12);
+    border: 1px solid rgba(26,43,61,0.12);
   }
 
   .service-card {
-    background: var(--black);
+    background: var(--cream);
     padding: 2.25rem 2rem;
     transition: background 0.2s;
   }
 
-  .service-card:hover { background: rgba(196,64,26,0.06); }
+  .service-card:hover { background: rgba(107,111,58,0.08); }
 
   .service-num {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
-    color: var(--rust);
+    color: var(--olive);
     letter-spacing: 0.15em;
     margin-bottom: 1rem;
   }
@@ -304,7 +531,7 @@
 
   .service-desc {
     font-size: 0.9rem;
-    color: rgba(244,241,235,0.68);
+    color: rgba(26,43,61,0.7);
     line-height: 1.7;
   }
 
@@ -316,18 +543,18 @@
     grid-template-columns: 140px 1.5fr 1fr;
     gap: 2.5rem;
     padding: 2rem 0;
-    border-top: 1px solid rgba(244,241,235,0.1);
+    border-top: 1px solid rgba(26,43,61,0.15);
     align-items: start;
   }
 
-  .project:last-child { border-bottom: 1px solid rgba(244,241,235,0.1); }
+  .project:last-child { border-bottom: 1px solid rgba(26,43,61,0.15); }
 
   .project-tag {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--olive);
     padding-top: 0.35rem;
   }
 
@@ -341,7 +568,7 @@
 
   .project-desc {
     font-size: 0.95rem;
-    color: rgba(244,241,235,0.78);
+    color: rgba(26,43,61,0.78);
     line-height: 1.7;
   }
 
@@ -349,24 +576,24 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.72rem;
     letter-spacing: 0.08em;
-    color: var(--steel-light);
+    color: var(--ink-mute);
     line-height: 1.9;
   }
 
   .project-meta a {
-    color: var(--white);
+    color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid rgba(196,64,26,0.5);
+    border-bottom: 1px solid rgba(107,111,58,0.6);
     transition: color 0.2s, border-color 0.2s;
     word-break: break-all;
   }
 
-  .project-meta a:hover { color: var(--rust); border-color: var(--rust); }
+  .project-meta a:hover { color: var(--olive); border-color: var(--olive); }
 
   .project-meta-row { display: block; }
 
   .project-meta-label {
-    color: var(--rust);
+    color: var(--olive);
     margin-right: 0.5rem;
   }
 
@@ -381,7 +608,7 @@
 
   .cred-item {
     padding: 1.5rem 0;
-    border-top: 1px solid rgba(244,241,235,0.1);
+    border-top: 1px solid rgba(26,43,61,0.15);
   }
 
   .cred-org {
@@ -389,20 +616,20 @@
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--olive);
     margin-bottom: 0.4rem;
   }
 
   .cred-role {
     font-size: 0.95rem;
-    color: var(--white);
+    color: var(--ink);
     font-weight: 500;
     margin-bottom: 0.2rem;
   }
 
   .cred-detail {
     font-size: 0.85rem;
-    color: var(--steel-light);
+    color: var(--ink-mute);
   }
 
   /* CONTACT */
@@ -419,7 +646,7 @@
   .contact-text { max-width: 520px; }
 
   .contact-text p {
-    color: rgba(244,241,235,0.75);
+    color: rgba(26,43,61,0.75);
     font-size: 1rem;
     margin-bottom: 2rem;
   }
@@ -436,33 +663,33 @@
     gap: 0.75rem;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8rem;
-    color: var(--white);
+    color: var(--ink);
     text-decoration: none;
-    border: 1px solid rgba(244,241,235,0.25);
+    border: 1px solid rgba(26,43,61,0.3);
     padding: 0.8rem 1.3rem;
     letter-spacing: 0.08em;
     transition: all 0.2s;
   }
 
   .contact-link.primary {
-    background: var(--rust);
-    border-color: var(--rust);
+    background: var(--olive);
+    border-color: var(--olive);
   }
 
   .contact-link:hover {
-    background: var(--rust);
-    border-color: var(--rust);
+    background: var(--olive);
+    border-color: var(--olive);
   }
 
   .contact-link.primary:hover {
-    background: var(--rust-dark);
-    border-color: var(--rust-dark);
+    background: var(--olive-dark);
+    border-color: var(--olive-dark);
   }
 
   .contact-address {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
-    color: var(--steel-light);
+    color: var(--ink-mute);
     letter-spacing: 0.08em;
     line-height: 1.9;
     text-align: right;
@@ -485,7 +712,7 @@
   .footer-copy {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
-    color: var(--steel);
+    color: var(--ink-mute);
     letter-spacing: 0.1em;
   }
 
@@ -501,6 +728,10 @@
   .hero-meta { animation: fadeUp 0.6s 0.3s ease both; }
 
   /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
   @media (max-width: 900px) {
     .services-grid { grid-template-columns: 1fr 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -518,6 +749,8 @@
     nav { display: none; }
     .logo-sub { display: none; }
     .hero-meta { gap: 1.5rem 2rem; }
+    .logo img { width: 52px; height: 52px; }
+    .cta { padding: 1.5rem 1.25rem; }
   }
 </style>
 </head>
@@ -547,28 +780,88 @@
 <main>
   <section class="hero">
     <div class="container">
-      <div class="hero-tag">Agentic AI · Systems Consulting</div>
-      <h1>Heavy Problems. <em>Quiet</em> Solutions.</h1>
-      <p class="hero-body">
-        I have been building world-class reservations systems for 24 years — Full Service Airline Legacy and OOSD at Sabre, LCC systems with Radixx and Results, and Air + Cruise integrated systems at Amadeus. We can hit the ground running on Offer/Order, NDC, PSS modernization, and the messy edges of distribution. The same patterns translate directly to hotels, cruises, concert ticketing, amusement parks, and anywhere else inventory meets demand at scale.
-      </p>
-      <p class="hero-body">
-        Beyond reservations, we build software, websites, and mobile apps, run digital marketing and lead generation, and take on technical problems across industries. Agentic AI is woven through all of it — not as a buzzword, but as a tool that makes the work faster and the output better.
-      </p>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <strong>34</strong>
-          Years in Tech
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-tag">Agentic AI · Systems Consulting</div>
+          <h1>Heavy Problems. <em>Strong</em> Solutions.</h1>
+          <p class="hero-body">
+            For the past 24 years we have been delivering solutions in the Travel Industry — Full Service Airline Legacy and OOSD at Sabre, LCC systems with Radixx and Results, and Air + Cruise integrated systems at Amadeus. We can hit the ground running on Offer/Order, NDC, PSS modernization, and the messy edges of distribution. The same patterns translate directly to hotels, cruises, concert ticketing, amusement parks, and anywhere else inventory meets demand at scale.
+          </p>
+          <p class="hero-body">
+            Beyond reservations, we can build customer facing applications with modern UIs on web and mobile, run digital marketing and lead generation, and take on technical problems across complex industries. Agentic AI is woven through all of our processes as a powerful tool that accelerates development and delivery of thoroughly tested solutions.
+          </p>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <strong>34</strong>
+              Years in Software Solutioning
+            </div>
+            <div class="hero-meta-item">
+              <strong>Agentic AI</strong>
+              Rapid Development and Deployment
+            </div>
+            <div class="hero-meta-item">
+              <strong>Multi-Domain</strong>
+              Experience and Expertise
+            </div>
+          </div>
         </div>
-        <div class="hero-meta-item">
-          <strong>Agentic AI</strong>
-          Rapid Development and Deployment
-        </div>
-        <div class="hero-meta-item">
-          <strong>Multi-Industry</strong>
-          Reach
-        </div>
-       
+
+        <aside class="cta" aria-labelledby="cta-title">
+          <div class="cta-eyebrow">Start a Conversation</div>
+          <h2 class="cta-title" id="cta-title">Tell us about the problem.</h2>
+          <p class="cta-sub">No sales pitch — a real reply from Alex within one business day.</p>
+
+          <form id="cta-form" class="cta-form" novalidate>
+            <div class="field">
+              <label for="cta-name">Name</label>
+              <input type="text" id="cta-name" name="name" required autocomplete="name" placeholder="Your name">
+              <div class="field-error">Please enter your name.</div>
+            </div>
+
+            <div class="field">
+              <label for="cta-problem">Describe the problem</label>
+              <textarea id="cta-problem" name="problem" required placeholder="What are you trying to build, fix, or figure out?"></textarea>
+              <div class="field-error">A short description helps us reply usefully.</div>
+            </div>
+
+            <div class="field" role="radiogroup" aria-label="Preferred contact method">
+              <label>Preferred contact</label>
+              <div class="radio-row">
+                <div class="radio-opt">
+                  <input type="radio" id="prefer-email" name="prefer" value="email" checked>
+                  <label for="prefer-email">Email</label>
+                </div>
+                <div class="radio-opt">
+                  <input type="radio" id="prefer-phone" name="prefer" value="phone">
+                  <label for="prefer-phone">Phone</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field" id="field-email">
+              <label for="cta-email">Email</label>
+              <input type="email" id="cta-email" name="email" autocomplete="email" placeholder="you@company.com">
+              <div class="field-error">Please enter a valid email address.</div>
+            </div>
+
+            <div class="field" id="field-phone" hidden>
+              <label for="cta-phone">Phone</label>
+              <input type="tel" id="cta-phone" name="phone" autocomplete="tel" placeholder="+1 (555) 555-5555">
+              <div class="field-error">Please enter a valid phone number (at least 7 digits).</div>
+            </div>
+
+            <button type="submit" class="cta-submit">Send Message →</button>
+
+            <p class="cta-privacy">
+              <span><strong>We will not share your contact info or send you any marketing materials.</strong> Your message goes straight to Alex — used only to reply to your inquiry.</span>
+            </p>
+          </form>
+
+          <div class="cta-success" id="cta-success" role="status">
+            <strong>Message Received</strong>
+            Thanks — we'll be in touch within one business day.
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -582,10 +875,10 @@
       </div>
       <div class="about-grid">
         <div class="about-main">
-          <p><strong>Fairchild Heavy Industries LLC</strong> is a technology consulting and software development firm based in Carolina, Puerto Rico. Founded in April 2026 by Alexander Fairchild, the firm builds software, designs websites, develops cross-platform mobile apps, runs digital marketing and lead generation, and advises on technical strategy across industries.</p>
+          <p><strong>Fairchild Heavy Industries LLC</strong> is a technology consulting and software development firm based in Puerto Rico. Founded in 2026 by Alex Fairchild, the firm builds software, designs websites, develops cross-platform mobile apps, runs digital marketing and lead generation, and advises on technical strategy across industries.</p>
           <p>The name is intentionally weighty. We treat what we build as industrial work — engineered, durable, and accountable to the people who depend on it. That applies whether the deliverable is a mobile game, a small-business website, an airline distribution system, or a marketing pipeline.</p>
           <p>We are AI-native by default. Agentic AI is part of how we research, design, code, test, and ship — and increasingly, part of what we ship. That makes a small firm move like a much larger one, and lets us take on work across sectors without diluting quality.</p>
-          <p>The founder, <strong>Alexander Fairchild</strong>, has 34 years in technology, including senior roles at Sabre and Amadeus leading global engineering and product teams. Today the work spans heavy equipment distribution, consumer apps, and airline technology — wherever good software and clear thinking move the needle.</p>
+          <p>The founder, <strong>Alexander Fairchild</strong>, has 34 years in technology, including senior roles at Sabre and Amadeus leading global engineering and product teams. Today the work spans systems development for B2B clients, consumer apps, and airline technology — wherever good software and clear thinking move the needle.</p>
         </div>
         <div class="about-sidebar">
           <div class="sidebar-item">
@@ -620,7 +913,7 @@
         <div class="service-card">
           <div class="service-num">01</div>
           <div class="service-name">Software Development</div>
-          <p class="service-desc">Custom software, APIs, and backend systems. We architect, write, and ship production code — Kotlin, C# / .NET, and the languages your problem demands.</p>
+          <p class="service-desc">Custom software, APIs, and backend systems. We architect, write, and ship production code.</p>
         </div>
         <div class="service-card">
           <div class="service-num">02</div>
@@ -635,7 +928,7 @@
         <div class="service-card">
           <div class="service-num">04</div>
           <div class="service-name">Agentic AI Solutions</div>
-          <p class="service-desc">Custom AI agents and automations that do real work — content pipelines, research, metadata enrichment, internal tooling. Built on Claude and shipped with intent.</p>
+          <p class="service-desc">Custom AI agents and automations that do real work — content pipelines, research, metadata enrichment, internal tooling.</p>
         </div>
         <div class="service-card">
           <div class="service-num">05</div>
@@ -793,6 +1086,95 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  const form = document.getElementById('cta-form');
+  if (!form) return;
+
+  const success = document.getElementById('cta-success');
+  const fieldEmail = document.getElementById('field-email');
+  const fieldPhone = document.getElementById('field-phone');
+  const inputEmail = document.getElementById('cta-email');
+  const inputPhone = document.getElementById('cta-phone');
+  const radios = form.querySelectorAll('input[name="prefer"]');
+
+  function syncContactField() {
+    const prefer = form.querySelector('input[name="prefer"]:checked').value;
+    if (prefer === 'email') {
+      fieldEmail.hidden = false;
+      fieldPhone.hidden = true;
+      inputPhone.value = '';
+      clearError(fieldPhone);
+    } else {
+      fieldEmail.hidden = true;
+      fieldPhone.hidden = false;
+      inputEmail.value = '';
+      clearError(fieldEmail);
+    }
+  }
+
+  radios.forEach(r => r.addEventListener('change', syncContactField));
+
+  function setError(fieldEl) { fieldEl.classList.add('has-error'); }
+  function clearError(fieldEl) { fieldEl.classList.remove('has-error'); }
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+  }
+  function isValidPhone(v) {
+    const digits = v.replace(/\D/g, '');
+    return digits.length >= 7 && digits.length <= 15;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let ok = true;
+    const nameField = document.getElementById('cta-name').closest('.field');
+    const problemField = document.getElementById('cta-problem').closest('.field');
+
+    if (!document.getElementById('cta-name').value.trim()) {
+      setError(nameField); ok = false;
+    } else { clearError(nameField); }
+
+    if (!document.getElementById('cta-problem').value.trim()) {
+      setError(problemField); ok = false;
+    } else { clearError(problemField); }
+
+    const prefer = form.querySelector('input[name="prefer"]:checked').value;
+    if (prefer === 'email') {
+      if (!isValidEmail(inputEmail.value)) {
+        setError(fieldEmail); ok = false;
+      } else { clearError(fieldEmail); }
+    } else {
+      if (!isValidPhone(inputPhone.value)) {
+        setError(fieldPhone); ok = false;
+      } else { clearError(fieldPhone); }
+    }
+
+    if (!ok) return;
+
+    const name = encodeURIComponent(document.getElementById('cta-name').value.trim());
+    const problem = document.getElementById('cta-problem').value.trim();
+    const contactLine = prefer === 'email'
+      ? 'Email: ' + inputEmail.value.trim()
+      : 'Phone: ' + inputPhone.value.trim();
+    const body = encodeURIComponent(problem + '\n\n---\nName: ' + decodeURIComponent(name) + '\n' + contactLine + '\nPreferred contact: ' + prefer);
+    const subject = encodeURIComponent('FHI inquiry — ' + decodeURIComponent(name));
+
+    window.location.href = 'mailto:fairchildheavyindustries@gmail.com?subject=' + subject + '&body=' + body;
+
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+
+  ['cta-name', 'cta-problem', 'cta-email', 'cta-phone'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => clearError(el.closest('.field')));
+  });
+})();
+</script>
 
 </body>
 </html>
