@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Fairchild FreeCell</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #106028; /* app felt green */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 48px 20px 64px;
+            color: #f1f5f9;
+        }
+
+        .card {
+            background-color: #0F172A; /* app tray dark navy */
+            border-radius: 18px;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px 36px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .header img {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            letter-spacing: -0.3px;
+        }
+
+        .header-text p {
+            font-size: 0.9rem;
+            color: #94a3b8; /* app TrayHeaderLabel */
+            margin-top: 4px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #1E293B; /* app TrayHeaderLight */
+            margin: 28px 0;
+        }
+
+        h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 0.975rem;
+            line-height: 1.65;
+            color: #cbd5e1;
+        }
+
+        .email-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 28px;
+            background-color: #106028;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 0.975rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            transition: background-color 0.15s;
+        }
+
+        .email-button:hover {
+            background-color: #0d4f20;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-item h3 {
+            font-size: 0.975rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 6px;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        footer {
+            margin-top: 32px;
+            font-size: 0.8rem;
+            color: #4a7c59;
+            text-align: center;
+        }
+
+        footer a {
+            color: #4a7c59;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="header">
+            <img src="freecell-icon.png" alt="Fairchild FreeCell icon">
+            <div class="header-text">
+                <h1>Fairchild FreeCell</h1>
+                <p>Support &amp; Feedback</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2>Contact</h2>
+        <p>Have a bug to report, a suggestion, or just want to say hello? We read every email.</p>
+        <a class="email-button" href="mailto:fairchildheavyindustries@gmail.com">
+            Email Support
+        </a>
+
+        <hr class="divider">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How do I change the card style or table color?</h3>
+            <p>Tap the menu icon in the top-right corner to open the settings tray. Card style and table color options are listed there.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What are the 32,000 deals?</h3>
+            <p>The deals are the original Microsoft FreeCell numbered games (1–32,000), fully compatible with the classic Windows version. Every deal is solvable except deal #11982.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I jump to a specific deal number?</h3>
+            <p>Open the settings tray and tap "Edit game number" to enter any deal from 1 to 32,000.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I undo a move?</h3>
+            <p>Tap any card that has already been moved — the game will step back one move at a time. You can undo as many times as you like.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I remove ads?</h3>
+            <p>Tap the menu icon and select "Remove Ads" for a one-time purchase. Ads are removed permanently across reinstalls as long as you use the same App Store account.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>My game disappeared after reinstalling. Can I recover it?</h3>
+            <p>In-progress games are stored locally on your device and are not backed up to the cloud. Reinstalling will start a fresh game, but your "Remove Ads" purchase can always be restored.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Fairchild Heavy Industries LLC &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
